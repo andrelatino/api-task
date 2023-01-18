@@ -5,7 +5,7 @@ body{
 background: white;
 margin: 0;
 padding:0;
-background-image: url('http://localhost:10073/api-task/login1.svg');
+background-image: url('login1.svg');
 background-size: cover;
 background-repeat: no-repeat;
 background-attachment: fixed;
