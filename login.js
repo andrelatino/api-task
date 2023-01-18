@@ -1,4 +1,6 @@
-
+if (localStorage.getItem("authToken") !== null) {
+    window.location.href = 'home.html';
+}
 const loginForm = document.getElementById('formLogin');
 
 loginForm.addEventListener('submit', (event) => {

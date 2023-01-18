@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -5,18 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="home.css">
+    <script src="global.js"></script>
     <script src="home.js"></script>  
   </head>
-  
+
   <body>
-    <div id="nav"><span>Navigation</span></div>
+     <p id="plogout" >Juan Roussille : <button id="logout" onclick="logoutUser()">Logout?</button>  
+     <div id="nav">Mes Chantiers</div> 
     <div id="g-progressbar">
       <div class="g-progressbar-loading">
         <div class="g-progressbar-inner-loading"></div>
       </div>
     </div>
-    <!-- <p id="plogout" >Hi Admin : <button id="logout" onclick="logoutUser()">Logout</button> -->
-    <p id="hello-user"> <span id="name"></span> Choisissez votre chantier </p>  
+     
+    
     <div id="offline-message"></div>  
     <div id="grid">   
       <!-- content will be added here -->
@@ -28,8 +31,10 @@
 
     <div id="add_sidebar">
       <h1 id="add_title">Add New</h1>
+      
       <form id="add_form">    
           
+        
           <label for="sku">SKU:</label>
           <input type="text" id="sku" name="sku" required >
           
@@ -46,7 +51,8 @@
           <input type="text" id="image" name="image" required >  
           
           <button type="submit" id="add_btn"  onclick="add_check_fields()">ADD NEW</button>     
-      </form>
+     
+        </form>
         <script>
         document.getElementById('add_form').addEventListener('submit', function(event) {
           event.preventDefault();
@@ -102,5 +108,6 @@
 
 
 </body>
-
+<footer>
+</footer>
 </html>

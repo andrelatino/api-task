@@ -51,16 +51,20 @@ div#botoncito {
     position: relative;
 }
   button.edit {
-    background: #f8f8f8;
     border: none;
-    padding: 10px;
-    width: 100%;
+    padding: 0;
+    background: none;
 }
   .item-edit {
     border: none;
     background: white;
     margin: 0;
     padding: 0;
+}
+  div#nav {
+    padding: 20px 0;
+    font-size: 19px;
+    font-weight: 400;
 }
 
 img.image {

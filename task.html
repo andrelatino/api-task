@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
+    <meta name="google" content="notranslate" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="task.css">
-    <script src="task.js"></script>  
-    
+    <link rel="stylesheet" href="global.css">
+    <script src="global.js"></script>
+    <script src="task.js"></script> 
 
   </head>  
   <body>
+    <p id="plogout" >Juan Roussille : <button id="logout" onclick="logoutUser()">Logout?</button>  
+     <div id="nav"></div>
+    <script>
+      var pageTitle = localStorage.getItem("customer_name");
+      document.getElementById("nav").innerHTML = pageTitle;
+    </script>
     <div id="g-progressbar">
       <div class="g-progressbar-loading">
         <div class="g-progressbar-inner-loading"></div>
       </div>
     </div>
-    <p id="plogout" >Hi Admin : <button id="logout" onclick="logoutUser()">Logout</button>
     <div id="offline-message"></div>  
     <div id="grid">   
       <!-- content will be added here -->
@@ -99,6 +106,7 @@
     <button id="add-content" onclick = "open_add_sidebar()" <span class = "add-button"> + </span> </button>  
 
 
+  
+ 
 </body>
-
 </html>

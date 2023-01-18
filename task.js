@@ -43,13 +43,14 @@ function getData(){
             
             <div class="content">  
                
-                <p class="customer_id:">customer_id:${api.customer_id}</p>     
-                <p class="task:">task:${api.task}</p>
-                <p class="status:">status:${api.status}</p>
+                    
+                <p class="task-title">${api.task}</p>
+                <p class="task-total">Taches : 10</p>
+                <p class="task-status">Etat : ${api.status}</p>
                 
             </div>
             <div id="botoncito">    
-                <button class="edit" id="btn${api.id}">EDIT(${api.id})</button>
+                <button class="edit" id="btn${api.id}">DEMARRER(${api.id})</button>
             </div>
         `;
         GridList.appendChild(DivItems);
@@ -307,11 +308,7 @@ function showProgressBar() {
 // if (getToken != null) {
 // //   window.location.href = '/api-login/login.html'
 // }
-    var getToken = localStorage.getItem("authToken");
-    if (getToken === null || getToken === undefined) {
-        window.location.href = './'
-    }
-function logoutUser() {
-    localStorage.removeItem("authToken");
-    window.location.href = './'
-}
+    // var getToken = localStorage.getItem("authToken");
+    // if (getToken === null || getToken === undefined) {
+    //     window.location.href = './'
+    // }

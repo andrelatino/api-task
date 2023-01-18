@@ -1,7 +1,15 @@
 html, body, h1, h2, h3, h4, h5, h6 p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6, label {
   font-family: system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif!important;
 }
-body {
-    background: white;
-    padding: 3vw;
+body{
+  padding:5vw;
+  background: white;
 }
+div#nav {
+    padding: 20px 0;
+    font-size: 19px;
+    font-weight: 400;
+}
+ .items{
+       border: 1px solid #f8f8f8;
+ }

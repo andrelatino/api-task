@@ -2,13 +2,15 @@ html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, tex
   font-family: system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif!important;
 }
 body{
-background: white;
-margin: 0;
-padding:0;
-background-image: url('login1.svg');
+background-image: url("./login1.svg");
 background-size: cover;
 background-repeat: no-repeat;
 background-attachment: fixed;
+margin:0;
+}
+p#version {
+    text-align: center;
+    color: darkgrey;
 }
 #formBox{
     display: grid;

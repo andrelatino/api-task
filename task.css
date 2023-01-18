@@ -29,7 +29,12 @@ button#add-content {
     border-radius: 50%;
     font-weight: 200;
 }
-
+p.task-title {
+    background: #046afb;
+    margin: 0!important;
+    padding: 10px!important;
+    color: white;
+}
 
 #grid {
   display: grid;
@@ -77,9 +82,8 @@ font-weight: 900px;
 @media screen and (max-width: 640px) {
   #grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 10px;
-    
     padding:0;
     place-content: space-evenly;
     

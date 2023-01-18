@@ -8,6 +8,11 @@ window.onload = function() {
   }
 }
 
+function logoutUser() {
+    localStorage.removeItem("authToken");
+    window.location.href = './'
+}
+
 function getData(){
     showProgressBar();
     
@@ -24,18 +29,14 @@ function getData(){
         DivItems.className = 'items';
         DivItems.innerHTML = `
                 
-            
-            <img class="image" src="${api.image}" loading="lazy" width="170px" height="170px">  
-            
-            <div class="content">  
-                     
-                <p class="name">${api.name}</p>
+            <button class="edit" id="btn${api.id}">
+                <img class="image" src="${api.image}" loading="lazy" width="170px" height="170px">  
                 
-                
-            </div>
-            <div id="botoncito">    
-                <button class="edit" id="btn${api.id}">EDIT(${api.id})</button>
-            </div>
+                <div class="content">                    
+                    <p class="name">${api.name}</p>
+                </div>
+            </button>
+            
         `;
         GridList.appendChild(DivItems);
 
@@ -85,11 +86,4 @@ function showProgressBar() {
 // if (getToken != null) {
 // //   window.location.href = '/api-login/login.html'
 // }
-    var getToken = localStorage.getItem("authToken");
-    if (getToken === null || getToken === undefined) {
-        window.location.href = './'
-    }
-function logoutUser() {
-    localStorage.removeItem("authToken");
-    window.location.href = './'
-}
+    
