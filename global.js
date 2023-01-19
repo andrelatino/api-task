@@ -1,5 +1,5 @@
 
-document.getElementById("version").innerHTML = "v7";
+document.getElementById("version").innerHTML = "v9";
 
 if (localStorage.getItem("authToken") == null) {
     window.location.href = 'index.html';
