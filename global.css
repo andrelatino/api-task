@@ -19,3 +19,10 @@ button.edit {
     background: none;
     text-align: left;
 }
+div#version {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    right: 50%;
+    color: #cecece;
+}
