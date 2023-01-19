@@ -1,5 +1,5 @@
 if (localStorage.getItem("authToken") !== null) {
-    window.location.href = 'home.html';
+    window.location.href = 'client.html';
 }
 const loginForm = document.getElementById('formLogin');
 

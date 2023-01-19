@@ -29,8 +29,9 @@ function getData(){
            
         <button class="edit" id="btn${api.id}">
             <div class="content">  
-                <p class='service-name'>Service Name : ${api.name}</p>                
-                <p>Service Status : ${api.status}</p>
+                <p class='service-name'>Service Name : ${api.name}</p>
+                <p>Client ID : ${api.client_id}</p>
+                <p>Service ID : ${api.id}</p>
                
             </div>
         </button>

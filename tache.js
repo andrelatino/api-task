@@ -48,7 +48,7 @@ function getData(){
            
         <button class="edit" id="btn${api.id}">
             <div class="content">  
-                <p class="subtask-title">Tache Name : ${api.name}</p>
+                <p class="subtask-title">Tache Name : ${api.name} - Tache ID : ${api.id} </p>
             </div>
             
             
