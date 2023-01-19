@@ -1,0 +1,24 @@
+{
+  "background_color": "#ffffff",
+  "description": "PWA App Staff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Staff",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "Staff",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "categories": [
+    "business"
+  ],
+  "screenshots": [],
+  "icons": [
+    {
+      "src": "./solar.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "shortcuts": []
+}
