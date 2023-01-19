@@ -53,6 +53,7 @@ box-shadow: 0 20px 25px -5px rgb(0 0 0 / 10%), 0 10px 10px -5px rgb(0 0 0 / 4%);
 .content p {
   display: grid;
   margin: 10px;
+  padding: 10px!important;
 }
 .content {
     position: relative;

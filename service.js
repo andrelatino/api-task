@@ -1,6 +1,6 @@
 // document.cookie = "name=value; SameSite=None; Secure";
-var customerId = localStorage.getItem("customer_id");
-var customerName = localStorage.getItem("customer_name");
+var client_id = localStorage.getItem("client_id");
+var client_name = localStorage.getItem("client_name");
 
 window.onload = function() {
   if (!navigator.onLine) {
@@ -10,136 +10,44 @@ window.onload = function() {
   }
 }
 
-function closeAndReloadNew() {
-    close_add_sidebar();
-    setTimeout(function() {
-        location.reload();
-    }, 500); // 5 seconds
-}
-function closeAndReloadedit() {
-    close_edit_sidebar();
-    setTimeout(function() {
-        location.reload();
-    }, 500); // 5 seconds
-}
-
-
 function getData(){
     showProgressBar();
     
     // alert(customerName);
     // Fetch the JSON data and create the product elements as before
     
-    fetch(`https://x8ki-letl-twmt.n7.xano.io/api:3JwI6wg3/task-link?customer_id=${customerId}`)
+    fetch(`https://x8ki-letl-twmt.n7.xano.io/api:3JwI6wg3/service-client?client_id=${client_id}`)
     .then(response => response.json())
     .then(data => {        
         setInterval(hideProgressBar, 1000);
         const GridList = document.getElementById('grid');
 
-        for (const api of data) {
+        for (const api of data.service) {
         const DivItems = document.createElement('div');
         DivItems.className = 'items';
         DivItems.innerHTML = `
-            
+           
+        <button class="edit" id="btn${api.id}">
             <div class="content">  
+                <p class='service-name'>Service Name : ${api.name}</p>                
+                <p>Service Status : ${api.status}</p>
                
-                    
-                <p class="task-title">${api.task}</p>
-                <p class="task-total">Taches : 10</p>
-                <p class="task-status">Etat : ${api.status}</p>
-                
             </div>
-            <div id="botoncito">    
-                <button class="edit" id="btn${api.id}">DEMARRER(${api.id})</button>
-            </div>
+        </button>
+            
         `;
         GridList.appendChild(DivItems);
 
             const button = document.getElementById(`btn${api.id}`);
             button.addEventListener('click', () => {
-
-                document.getElementById('edit_title').innerHTML = `Edit(${api.id})`;
-
-                const field_input_id = document.querySelector('#editForm [name="id"]');
-                field_input_id.value = api.id;                
-
-                const field_input_sku = document.querySelector('#editForm [name="sku"]');
-                field_input_sku.value = api.sku; 
-
-                const field_input_name = document.querySelector('#editForm [name="name"]');
-                field_input_name.value = api.name; 
-
-                const field_input_desc = document.querySelector('#editForm [name="desc"]');
-                field_input_desc.value = api.desc; 
-
-                const field_input_price = document.querySelector('#editForm [name="price"]');
-                field_input_price.value = api.price; 
-
-                const field_input_image = document.querySelector('#editForm [name="image"]');
-                field_input_image.value = api.image; 
-                
-                open_edit_sidebar()
-
+                localStorage.setItem("service_id", api.id);
+                localStorage.setItem("service_name", api.name);                
+                window.location.href = 'tache.html';
             });
         }
     });
 }
 
-  			
-function open_add_sidebar() {		
-    
-    				
-    document.getElementById("add_sidebar").style.width = "100%";	
-    document.getElementById("add_sidebar").style.maxWidth = "500px";
-    document.getElementById("add_sidebar").style.right = "0";		
-    
-    document.getElementById("add_overlay_bg").style.opacity = "1";
-    document.getElementById("add_overlay_bg").style.visibility = "visible";	
-    			
-}
-
-function open_edit_sidebar() {		
-    
-    				
-    document.getElementById("edit_sidebar").style.width = "100%";	
-    document.getElementById("edit_sidebar").style.maxWidth = "500px";
-    document.getElementById("edit_sidebar").style.right = "0";		
-    
-    document.getElementById("edit_overlay_bg").style.opacity = "1";
-    document.getElementById("edit_overlay_bg").style.visibility = "visible";	
-    			
-}
-
-function close_add_sidebar() {
-
-    
-    // document.body.classList.toggle("neo-lock");			
-    if (window.matchMedia("(max-width: 501px)").matches) {			
-        document.getElementById("add_sidebar").style.width = "100%";
-        document.getElementById("add_sidebar").style.right = "-100%";
-    }else{
-        document.getElementById("add_sidebar").style.width = "100%";
-        document.getElementById("add_sidebar").style.right = "-500px";
-    }
-    document.getElementById("add_overlay_bg").style.opacity = "0";
-    document.getElementById("add_overlay_bg").style.visibility = "hidden";				
-    
-}
-
-function close_edit_sidebar() {
-    
-    // document.body.classList.toggle("neo-lock");			
-    if (window.matchMedia("(max-width: 501px)").matches) {			
-        document.getElementById("edit_sidebar").style.width = "100%";
-        document.getElementById("edit_sidebar").style.right = "-100%";
-    }else{
-        document.getElementById("edit_sidebar").style.width = "100%";
-        document.getElementById("edit_sidebar").style.right = "-500px";
-    }
-    document.getElementById("edit_overlay_bg").style.opacity = "0";
-    document.getElementById("edit_overlay_bg").style.visibility = "hidden";				
-    
-}
 
 //----------------------------------------------------------------------------
 //      ADD NEW CONTENT

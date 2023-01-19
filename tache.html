@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta name="google" content="notranslate" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="tache.css">
+    <link rel="stylesheet" href="global.css">
+    
+
+  </head>  
+  <body>
+    <p id="plogout" >Juan Roussille : <button id="logout" onclick="logoutUser()">Logout?</button>  
+    <div id="title">Taches</div> 
+    <script>
+      var pageTitle = localStorage.getItem("client_name");
+      var pageTitle2 = localStorage.getItem("service_name");
+      document.getElementById("title").innerHTML = "Client " +pageTitle+ " - Service " + pageTitle2;
+    </script>
+    <div id="g-progressbar">
+      <div class="g-progressbar-loading">
+        <div class="g-progressbar-inner-loading"></div>
+      </div>
+    </div>
+    <div id="offline-message"></div>  
+    <div id="grid">   
+      <!-- content will be added here -->
+    </div>    
+    
+
+</body>
+ <footer>
+  <script src="global.js"></script>
+    <script src="tache.js"></script> 
+ </footer>  
+</html>

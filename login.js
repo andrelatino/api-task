@@ -34,7 +34,7 @@ loginForm.addEventListener('submit', (event) => {
         const authToken = data.authToken;
         localStorage.setItem('authToken', authToken);
         if (authToken) {
-          window.location.href = 'home.html';
+          window.location.href = 'client.html';
           // alert ("You are logged");
         }
       });

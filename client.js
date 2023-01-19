@@ -17,7 +17,7 @@ function getData(){
     showProgressBar();
     
     // Fetch the JSON data and create the product elements as before
-    fetch('https://x8ki-letl-twmt.n7.xano.io/api:3JwI6wg3/customer')
+    fetch('https://x8ki-letl-twmt.n7.xano.io/api:3JwI6wg3/client')
     .then(response => response.json())
     .then(data => {        
         setInterval(hideProgressBar, 1000);
@@ -32,8 +32,10 @@ function getData(){
             <button class="edit" id="btn${api.id}">
                 <img class="image" src="${api.image}" loading="lazy" width="170px" height="170px">  
                 
-                <div class="content">                    
-                    <p class="name">${api.name}</p>
+                <div class="content">        
+                    <p class="name">Client Name : ${api.name}</p>            
+                    <p class="name">Client ID : ${api.id}</p>
+                    
                 </div>
             </button>
             
@@ -43,10 +45,12 @@ function getData(){
             const button = document.getElementById(`btn${api.id}`);
             button.addEventListener('click', () => {
 
-                document.getElementById('edit_title').innerHTML = `Edit(${api.id})`;
-                localStorage.setItem("customer_id", api.id);
-                localStorage.setItem("customer_name", api.name);
-                window.location.href = 'task.html'
+                // document.getElementById('edit_title').innerHTML = `Edit(${api.id})`;
+                
+                localStorage.setItem("client_id", api.id);
+                localStorage.setItem("client_name", api.name);
+                
+                window.location.href = 'service.html';
                 
 
             });
@@ -76,14 +80,3 @@ function showProgressBar() {
   progressBar.style.transition = 'opacity 0.5s ease-out';
   progressBar.style.opacity = 1;
 }
-
-//----------------------------------------------------------------------------
-//      END DELETE CONTENT
-//----------------------------------------------------------------------------
-// var getToken = localStorage.getItem("authToken");
-// localStorage.removeItem("authToken");
-// window.location.href = '/api-login/login.html'
-// if (getToken != null) {
-// //   window.location.href = '/api-login/login.html'
-// }
-    
