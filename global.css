@@ -15,7 +15,7 @@ body{
  }
     
 .nav-style{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     right: 0;
     margin: 30px;
@@ -41,7 +41,7 @@ div#popup {
     position: absolute;
     bottom: 95px;
     background: #046afb;
-    width: 150px;
+    width: 180px;
     height: auto;
     border-radius: 10px;
     right: 28px;

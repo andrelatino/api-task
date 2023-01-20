@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta name="google" content="notranslate" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="global.css">
+
+  </head>  
+  <body>
+    <p id="plogout" >Juan Roussille : <button id="logout" onclick="logoutUser()">Logout?</button>  
+    <div id="title">Services</div> 
+    <script>
+      var pageTitle = localStorage.getItem("client_name");
+      document.getElementById("title").innerHTML = "Services";
+    </script>
+    <div id="g-progressbar">
+      <div class="g-progressbar-loading">
+        <div class="g-progressbar-inner-loading"></div>
+      </div>
+    </div>
+    <div id="offline-message"></div>  
+    <div id="grid">   
+      <!-- content will be added here -->
+    </div>
+    <div id="add_overlay_bg" onclick="close_add_sidebar()"></div>
+    <div id="edit_overlay_bg" onclick="close_edit_sidebar()"></div> 
+    
+     <!--START ADD SIDEBAR  -->
+
+    <div id="add_sidebar">
+      <h1 id="add_title">Add New</h1>
+      <form id="add_form">    
+          
+          <label for="sku">SKU:</label>
+          <input type="text" id="sku" name="sku" required >
+          
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required >
+          
+          <label for="description">Description:</label>
+          <input type="text" id="description" name="desc" required >          
+          
+          <label for="price">Price:</label>
+          <input type="number" id="price" name="price" required >
+          
+          <label for="image">Image:</label>
+          <input type="text" id="image" name="image" required >  
+          
+          <button type="submit" id="add_btn"  onclick="add_check_fields()">ADD NEW</button>     
+      </form>
+        <script>
+        document.getElementById('add_form').addEventListener('submit', function(event) {
+          event.preventDefault();
+          // Your form submission code here
+        });
+        </script>        
+        <p id="add_message"></p>
+     </div>
+    <!--END ADD SIDEBAR  -->
+
+
+    <!--START EDIT SIDEBAR  -->
+
+    <div id="edit_sidebar">
+      <h1 id="edit_title">Edit</h1>
+      <form id="editForm">    
+
+          
+          <input type="hidden" id="id" name="id" required >
+          
+          <label for="sku">sku:</label>
+          <input type="text" id="sku" name="sku" required >
+
+          <label for="name">name:</label>
+          <input type="text" id="name" name="name" required >
+
+          <label for="desc">desc:</label>
+          <input type="text" id="desc" name="desc" required >
+
+          <label for="price">price:</label>
+          <input type="text" id="price" name="price" required >
+
+          <label for="image">image:</label>
+          <input type="text" id="image" name="image" required >
+
+          <button type="submit" id="edit_btn"  onclick="sendEditData();">SAVE</button> 
+          <button type="submit" id="delete_btn"  onclick="deleteApiData();">DELETE</button>
+
+      </form>
+        <p id="editErrorMessage"> </p>
+         <script>
+        document.getElementById('editForm').addEventListener('submit', function(event) {
+          event.preventDefault();
+          // Your form submission code here
+        });
+        </script>         
+        
+     </div>
+    <!--END EDIT SIDEBAR  -->
+
+    
+    
+    <div id="version"></div>
+
+  
+ 
+</body>
+  <footer>
+     <script src="global.js"></script>
+    <script src="services.js"></script> 
+  </footer>
+</html>
