@@ -8,6 +8,13 @@ background-repeat: no-repeat;
 background-attachment: fixed;
 margin:0;
 }
+div#version {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    right: 50%;
+    color: black;
+}
 p#version {
     text-align: center;
     color: darkgrey;
